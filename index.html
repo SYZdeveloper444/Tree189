@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect ke Home</title>
+    <meta name="description" content="Halaman pengalihan ke halaman utama">
+    
+    <!-- Meta redirect untuk pengalihan otomatis -->
+    <meta http-equiv="refresh" content="0; URL='home.html'">
+    
+    <!-- Fallback JavaScript redirect -->
+    <script>
+        // Pengalihan JavaScript sebagai fallback
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "home.html";
+            }, 100);
+        };
+    </script>
+    
+    <!-- CSS untuk halaman redirect -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+        }
+        
+        h1 {
+            color: #182848;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+        
+        .subtitle {
+            color: #4b6cb7;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4b6cb7;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .message {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4b6cb7;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .message h3 {
+            color: #182848;
+            margin-bottom: 5px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(75, 108, 183, 0.3);
+        }
+        
+        .info-box {
+            background-color: #e8f4fd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #c3cfe2;
+        }
+        
+        .info-box h3 {
+            color: #182848;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mengalihkan ke Halaman Utama</h1>
+        <p class="subtitle">Anda akan dialihkan ke home.html secara otomatis</p>
+        
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Sedang mengalihkan ke halaman utama...</p>
+        </div>
+        
+        <div class="message">
+            <h3>Mengapa halaman ini ada?</h3>
+            <p>Halaman ini berfungsi sebagai file <strong>index.html</strong> yang secara otomatis mengarahkan pengunjung ke <strong>home.html</strong>. Hal ini diperlukan karena server web biasanya menampilkan index.html sebagai halaman pertama saat sebuah website diakses.</p>
+        </div>
+        
+        <p>Jika pengalihan tidak bekerja secara otomatis, silakan klik tombol di bawah ini:</p>
+        <a href="home.html" class="btn">Pergi ke Home.html</a>
+        
+        <div class="info-box">
+            <h3>Informasi Teknis:</h3>
+            <p>Halaman ini menggunakan tiga metode pengalihan untuk memastikan pengunjung sampai ke home.html:</p>
+            <ol>
+                <li><strong>Meta Refresh</strong> - Pengalihan otomatis melalui tag meta</li>
+                <li><strong>JavaScript Redirect</strong> - Pengalihan melalui JavaScript jika meta tag tidak bekerja</li>
+                <li><strong>Link Manual</strong> - Tombol untuk pengalihan manual jika kedua metode di atas gagal</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 - Halaman Redirect | Dibuat untuk tujuan pengalihan halaman</p>
+        </div>
+    </div>
+</body>
+</html>
